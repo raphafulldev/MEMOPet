@@ -1,0 +1,37 @@
+{
+  "expo": {
+    "name": "MemoPet",
+    "slug": "memopet",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "scheme": "memopet",
+    "description": "Pet digital afetivo para apoiar memorizacao, rotina e vinculo familiar de forma acolhedora e offline-first.",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.memopet.app"
+    },
+    "android": {
+      "package": "com.memopet.app",
+      "adaptiveIcon": {
+        "backgroundColor": "#E6F4FE",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "predictiveBackGestureEnabled": false
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-sqlite",
+      "expo-notifications"
+    ],
+    "experiments": {
+      "typedRoutes": false
+    }
+  }
+}

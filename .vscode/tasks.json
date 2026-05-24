@@ -1,0 +1,35 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "npm: install",
+      "type": "shell",
+      "command": "npm install",
+      "problemMatcher": []
+    },
+    {
+      "label": "expo: start",
+      "type": "shell",
+      "command": "npm start",
+      "problemMatcher": []
+    },
+    {
+      "label": "expo: ios",
+      "type": "shell",
+      "command": "npm run ios",
+      "problemMatcher": []
+    },
+    {
+      "label": "expo: android",
+      "type": "shell",
+      "command": "npm run android",
+      "problemMatcher": []
+    },
+    {
+      "label": "typecheck",
+      "type": "shell",
+      "command": "npm run typecheck",
+      "problemMatcher": "$tsc"
+    }
+  ]
+}

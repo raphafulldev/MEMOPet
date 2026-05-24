@@ -1,0 +1,35 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Expo Start",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "npm start"
+    },
+    {
+      "name": "Expo Start (Clear Cache)",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "npx expo start --clear"
+    },
+    {
+      "name": "Expo iOS",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "npm run ios"
+    },
+    {
+      "name": "Expo Android",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "npm run android"
+    },
+    {
+      "name": "TypeScript Check",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "npm run typecheck"
+    }
+  ]
+}
