@@ -9,10 +9,10 @@ The MVP focuses on a simple, welcoming, and accessible experience while avoiding
 MemoPet was designed around a practical problem: digital products can be difficult to navigate for people with cognitive decline when interfaces are overloaded, interactions are hidden, or flows require too many decisions.
 
 <p align="center">
-  <img src="assets/screenshots/1.jpeg" width="220" alt="MemoPet home screen" />
-  <img src="assets/screenshots/2.jpeg" width="220" alt="MemoPet memories screen" />
-  <img src="assets/screenshots/3.jpeg" width="220" alt="MemoPet memory game screen" />
-  <img src="assets/screenshots/4.jpeg" width="220" alt="MemoPet memory game screen" />
+  <img src="assets/screenshots/1.jpeg" width="200" alt="MemoPet home screen" />
+  <img src="assets/screenshots/2.jpeg" width="200" alt="MemoPet interaction screen" />
+  <img src="assets/screenshots/3.jpeg" width="200" alt="MemoPet memories screen" />
+  <img src="assets/screenshots/4.jpeg" width="200" alt="MemoPet daily routine screen" />
 </p>
 
 The app therefore prioritizes:
