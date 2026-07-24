@@ -1,87 +1,66 @@
 # MemoPet
 
-MemoPet e um app mobile offline-first em React Native com Expo para apoiar memorizacao afetiva, rotina e vinculo familiar de pessoas com Alzheimer leve ou moderado. O foco do MVP e oferecer uma experiencia acolhedora, simples e expandivel, sem prometer tratamento medico.
+MemoPet is an **offline-first mobile application built with React Native and Expo** to support affective memory, daily routines, and family connection for people living with mild or moderate Alzheimer's disease.
 
-## Objetivo
+The MVP focuses on a simple, welcoming, and accessible experience while avoiding medical claims. It combines familiar faces, routine reminders, lightweight memory activities, and a digital pet designed to encourage positive interaction.
 
-O app apresenta um pet digital carinhoso, memorias com fotos de familiares, um jogo simples de reconhecimento, uma rotina com lembretes e um modo cuidador para cadastro local. Toda a experiencia foi desenhada com botoes grandes, fonte maior, poucas opcoes por tela e linguagem positiva.
+## Product Overview
 
-## Stack
+MemoPet was designed around a practical problem: digital products can be difficult to navigate for people with cognitive decline when interfaces are overloaded, interactions are hidden, or flows require too many decisions.
 
-- Expo SDK 56
-- React Native
-- TypeScript
-- Expo Router
-- Zustand
-- Expo SQLite
-- Expo Notifications
-- Expo Image Picker
+The app therefore prioritizes:
 
-## Funcionalidades do MVP
+* Large touch targets
+* Readable typography
+* Few choices per screen
+* Positive and reassuring language
+* Simple navigation
+* Offline local persistence
 
-- Tela inicial com pet digital e saudacao personalizada
-- Exibicao da data atual e periodo do dia
-- Botao grande "Vamos lembrar?"
-- Lista de memorias com foto, nome e parentesco
-- Jogo simples de memoria com 2 ou 3 alternativas
-- Recompensa com carinho e alimentacao do pet
-- Tela de rotina com lembretes diarios
-- Modo cuidador para nome, fotos de familiares e ativacao de lembretes
-- Persistencia local em SQLite
-- Estado global com Zustand
-- Notificacoes locais diarias baseadas nos lembretes ativos
+## Core Features
 
-## Importante
+* Personalized home screen with a digital pet
+* Current date and time-of-day context
+* Family memories with photo, name, and relationship
+* Simple recognition game with two or three answer options
+* Positive reward feedback after interactions
+* Daily routine and reminder management
+* Caregiver mode for profile and memory setup
+* Local data persistence with SQLite
+* Global state management with Zustand
+* Local scheduled notifications
 
-- O app nao usa backend neste MVP.
-- O app nao possui login neste MVP.
-- O app nao usa IA neste MVP.
-- O app nao substitui acompanhamento medico, terapeutico ou familiar.
+## Tech Stack
 
-## Instalacao
+* **React Native**
+* **TypeScript**
+* **Expo SDK 56**
+* **Expo Router**
+* **Zustand**
+* **Expo SQLite**
+* **Expo Notifications**
+* **Expo Image Picker**
 
-### Requisitos
+## Architecture
 
-- Node.js 20 recomendado
-- npm 10+
-- Expo CLI via `npx expo`
-- Xcode ou Android Studio para simuladores, se desejar
-
-### Passos
-
-```bash
-npm install
-npx expo start
+```text
+UI Screens
+   |
+   v
+Reusable Components
+   |
+   +--> Zustand Store
+   |
+   +--> Local Services
+          |
+          +--> SQLite
+          +--> Notifications
+          +--> Image Picker
 ```
 
-Atalhos uteis:
+The current MVP intentionally uses a local-first architecture. It does not require authentication or a remote backend, reducing setup complexity and allowing the main experience to work offline.
 
-```bash
-npm run ios
-npm run android
-npm run web
-npm run typecheck
-```
-
-## VS Code
-
-O projeto ja vem com configuracao pronta de workspace em [.vscode](/Users/raphaelbarros/Projects/MEMOPet/.vscode):
-
-- `extensions.json` com extensoes recomendadas para Expo, React Native, ESLint e Prettier
-- `settings.json` com formatacao ao salvar, TypeScript do workspace e imports relativos
-- `launch.json` com atalhos para iniciar Expo, abrir iOS/Android e rodar typecheck
-- `tasks.json` com tarefas de `install`, `start`, `ios`, `android` e `typecheck`
-
-Extensoes recomendadas:
-
-- `expo.vscode-expo-tools`
-- `dbaeumer.vscode-eslint`
-- `prettier.prettier-vscode`
-- `msjsdiag.vscode-react-native`
-
-Se o VS Code perguntar sobre as recomendacoes, basta aceitar a instalacao.
-
-## Estrutura de pastas
+## Project Structure
 
 ```text
 app/
@@ -93,6 +72,7 @@ app/
     memories.tsx
     routine.tsx
     caregiver-settings.tsx
+
 components/
   BigButton.tsx
   MemoryCard.tsx
@@ -100,61 +80,123 @@ components/
   RewardAnimation.tsx
   RoutineItem.tsx
   ScreenContainer.tsx
+
 constants/
   theme.ts
+
 lib/
   database.ts
   date.ts
   notifications.ts
+
 stores/
   useAppStore.ts
+
 types/
   index.ts
 ```
 
-## Banco local
+## Local Data Model
 
-Tabelas criadas automaticamente na primeira execucao:
+SQLite tables are created automatically on first launch:
 
-- `user_profile`
-- `memories`
-- `reminders`
-- `pet_status`
+* `user_profile`
+* `memories`
+* `reminders`
+* `pet_status`
 
-O app tambem insere dados mockados iniciais para facilitar testes do fluxo completo.
+The project also includes initial mock data to make the complete MVP flow easier to test.
 
-## Fluxo do cuidador
+## Caregiver Flow
 
-No MVP atual, o modo cuidador permite:
+The caregiver mode currently supports:
 
-- editar o nome da pessoa assistida
-- adicionar foto, nome e parentesco de familiares
-- ativar ou desativar lembretes
-- ajustar horario de cada lembrete
+* Editing the assisted person's name
+* Adding family photos, names, and relationships
+* Enabling or disabling reminders
+* Changing reminder times
 
-## UX e acessibilidade
+## Accessibility and UX Decisions
 
-- Tipografia maior e legivel
-- Contraste suave, mas claro
-- Botoes grandes e areas de toque amplas
-- Pouco texto por tela
-- Linguagem acolhedora e positiva
-- Feedback amigavel no quiz:
-  - Acerto: "Muito bem! O pet ficou feliz."
-  - Erro: "Tudo bem, vamos tentar juntos."
+Accessibility was treated as a product requirement rather than a visual afterthought.
 
-## Proximos passos
+Current design decisions include:
 
-Veja o roadmap em [TODO.md](/Users/raphaelbarros/Projects/MEMOPet/TODO.md).
+* Larger typography
+* Large touch areas
+* Limited information density
+* Straightforward navigation
+* Supportive language
+* Positive feedback during recognition activities
 
-## Comandos uteis
+The interaction avoids punitive or stressful feedback, providing encouraging responses after both correct and incorrect answers.
+
+## Running the Project
+
+### Requirements
+
+* Node.js 20 recommended
+* npm 10+
+* Expo-compatible development environment
+* Xcode or Android Studio for native simulators, when needed
+
+### Install and run
 
 ```bash
-npx expo start --clear
-npx expo install
-code .
+npm install
+npx expo start
 ```
 
-## Licenca
+Useful commands:
 
-Este repositório segue a licenca MIT presente em [LICENSE](/Users/raphaelbarros/Projects/MEMOPet/LICENSE).
+```bash
+npm run ios
+npm run android
+npm run web
+npm run typecheck
+```
+
+## Development Status
+
+MemoPet is currently an **MVP and portfolio product under active development**.
+
+The current scope intentionally excludes:
+
+* Remote backend services
+* User authentication
+* AI features
+* Medical diagnosis or treatment functionality
+
+The app is not a substitute for medical, therapeutic, or family support.
+
+## Roadmap
+
+Planned improvements include:
+
+* Onboarding flow for caregivers
+* Removal and management of old memories
+* Original illustrated assets
+* Improved visual and audio accessibility feedback
+* Interaction history
+* Component and database flow tests
+* Store-ready iOS and Android builds
+* Internationalization
+* Evaluation of local data encryption for sensitive information
+
+See the full roadmap in [TODO.md](TODO.md).
+
+## What This Project Demonstrates
+
+* React Native application development
+* TypeScript in a mobile codebase
+* Offline-first product design
+* SQLite persistence
+* Global state management
+* Local notifications
+* Accessibility-oriented UX decisions
+* Modular project organization
+* Product thinking beyond a basic CRUD application
+
+## License
+
+This project is licensed under the terms described in [LICENSE](LICENSE).
